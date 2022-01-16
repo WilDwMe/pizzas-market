@@ -1,7 +1,8 @@
 import React, {useState, useEffect, useRef} from "react";
 
-const SortPopup = () => {
+const SortPopup = ({ items }) => {
     const [show, swithPopup] = useState(false);
+    const [active, setActive] = useState(0);
     const sortRef = useRef();
 
     const togglePopup = () => {
@@ -12,6 +13,10 @@ const SortPopup = () => {
        if(!e.path.includes(sortRef.current)){
         swithPopup(false);
        }
+    }
+
+    const onSelectItem = (index) => {
+        setActive(index);
     }
 
     useEffect(() => {
@@ -39,9 +44,7 @@ const SortPopup = () => {
             {show && (
                 <div className="sort__popup">
                     <ul>
-                    <li className="active">популярности</li>
-                    <li>цене</li>
-                    <li>алфавиту</li>
+                        { items.map((item, index) => <li key={index} onClick={() => onSelectItem(index)} className={active === index ? 'active' : ''}>{item}</li>) }
                     </ul>
                 </div>)}
       </div>

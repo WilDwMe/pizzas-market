@@ -10,6 +10,11 @@ const  App = () => {
       'Гриль',
       'Острые',
       'Закрытые'
+    ],
+    sortItem: [
+      'популярности',
+      'цене',
+      'алфавиту'
     ]
   }
 
@@ -20,7 +25,7 @@ const  App = () => {
         <div className="container">
           <div className="content__top">
           <Categories items={state.categories} onClickItem={(item) => console.log(item)}/>
-          <SortPopup/>
+          <SortPopup items={state.sortItem}/>
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
