@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 import cn from 'classnames';
 
 const ItemBlock = ({name, price, imageURL, types, sizes}) => {
@@ -65,6 +66,14 @@ const ItemBlock = ({name, price, imageURL, types, sizes}) => {
           </div>
         </div>
     )
+}
+
+ItemBlock.propTypes = {
+    name: PropTypes.string,
+    price: PropTypes.number,
+    imageURL: PropTypes.string,
+    types: PropTypes.array,
+    sizes: PropTypes.array
 }
 
 export default ItemBlock;
