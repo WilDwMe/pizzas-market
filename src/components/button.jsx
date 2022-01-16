@@ -8,7 +8,7 @@ const Button = ({onClick, className, outline, children}) => {
     });
 
     return(
-        <a href="/cart.html" className={clasess}>
+        <span className={clasess}>
               <span>{ children } ₽</span>
               <div className='button__delimiter'></div>
               <svg
@@ -41,7 +41,7 @@ const Button = ({onClick, className, outline, children}) => {
                 />
               </svg>
               <span>3</span>
-            </a>
+        </span>
     );
 }
 

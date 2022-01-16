@@ -1,0 +1,101 @@
+{
+    "pizzas": [
+        {
+        "id": 0,
+        "imageURL": "https://dominospizza.ru/_next/image?url=%2Fimages%2Fpizza-halves-desktop.jpg&w=256&q=75",
+        "name": "Пеперони с перцем",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30, 
+            40
+        ],
+        "price": 803,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 1,
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/%D0%9F%D0%95%D0%9F%D0%95/NULL/NULL/RU",
+        "name": "Пеперони без перца",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30, 
+            40
+        ],
+        "price": 803,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 2,
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/_%D0%94%D0%9E%D0%9C%D0%98%D0%9D%D0%9E%D0%A1/NULL/NULL/RU",
+        "name": "Перец с перерони",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30
+        ],
+        "price": 803,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 3,
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/_DPEP/NULL/NULL/RU",
+        "name": "Только перец",
+        "types": [
+            0
+        ],
+        "sizes": [
+            26,
+            30, 
+            40
+        ],
+        "price": 803,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 4,
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/%D0%94%D0%98%D0%90/NULL/NULL/RU",
+        "name": "Диабло",
+        "types": [
+            0
+        ],
+        "sizes": [
+            26,
+            30
+        ],
+        "price": 803,
+        "category": 0,
+        "rating": 4
+    },
+    {
+        "id": 5,
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/%D0%9C%D0%AF%D0%A1/NULL/NULL/RU",
+        "name": "Мясная",
+        "types": [
+            1
+        ],
+        "sizes": [
+            26,
+            30, 
+            40
+        ],
+        "price": 803,
+        "category": 0,
+        "rating": 4
+    }
+    ]
+}
