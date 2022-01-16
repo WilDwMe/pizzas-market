@@ -4,6 +4,7 @@ const SortPopup = ({ items }) => {
     const [show, swithPopup] = useState(false);
     const [active, setActive] = useState(0);
     const sortRef = useRef();
+    const activeName = items[active];
 
     const togglePopup = () => {
         swithPopup(!show);
@@ -17,6 +18,7 @@ const SortPopup = ({ items }) => {
 
     const onSelectItem = (index) => {
         setActive(index);
+        swithPopup(false);
     }
 
     useEffect(() => {
@@ -27,6 +29,7 @@ const SortPopup = ({ items }) => {
         <div className="sort" ref={sortRef}>
         <div className="sort__label">
           <svg
+            className={show ? 'rotated' : ''}
             width="10"
             height="6"
             viewBox="0 0 10 6"
@@ -39,7 +42,7 @@ const SortPopup = ({ items }) => {
             />
           </svg>
           <b>Сортировка по:</b>
-          <span onClick={togglePopup}>популярности</span>
+          <span onClick={togglePopup}>{activeName}</span>
         </div>
             {show && (
                 <div className="sort__popup">
