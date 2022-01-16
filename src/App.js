@@ -3,7 +3,7 @@ import { Header, Categories } from './components';
 
 const  App = () => {
 
-  
+
 
   const state = {
     categories: [
