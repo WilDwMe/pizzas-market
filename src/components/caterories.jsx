@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import uniqId from 'uniqid';
-import cn from 'classnames';
 
 const Categories = ({items, onClickItem}) => {
 
