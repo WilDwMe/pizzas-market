@@ -1,7 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Header, Categories } from './components';
 
 const  App = () => {
+
+  
+
+  const state = {
+    categories: [
+      'Мясные',
+      'Вегетарианская',
+      'Гриль',
+      'Острые',
+      'Закрытые'
+    ]
+  }
 
   return (
     <div className="wrapper">
@@ -9,13 +21,8 @@ const  App = () => {
       <div className="content">
         <div className="container">
           <div className="content__top">
-          <Categories items={[
-             'Мясные',
-             'Вегетарианская',
-             'Гриль',
-             'Острые',
-             'Закрытые'
-          ]}/>
+          <Categories items={state.categories} 
+          onClickItem={(item) => console.log(item)}/>
             <div className="sort">
               <div className="sort__label">
                 <svg
