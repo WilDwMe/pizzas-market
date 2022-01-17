@@ -76,4 +76,11 @@ ItemBlock.propTypes = {
     sizes: PropTypes.array
 }
 
+ItemBlock.defaultProps = {
+  sizes: [],
+  types: [],
+  price: 0,
+  name: '-'
+}
+
 export default ItemBlock;
