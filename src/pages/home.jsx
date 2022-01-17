@@ -11,9 +11,9 @@ const Home = ({items}) => {
           'Закрытые'
         ],
         sortItem: [
-          'популярности',
-          'цене',
-          'алфавиту'
+          { name: 'популярности', type: 'popular'},
+          {name: 'цене', type: 'price'},
+          {name: 'алфавиту', type: 'alphabet'}
         ]
       }
 
