@@ -69,7 +69,7 @@ const ItemBlock = ({name, price, imageURL, types, sizes}) => {
 }
 
 ItemBlock.propTypes = {
-    name: PropTypes.string,
+    name: PropTypes.string.isRequired,
     price: PropTypes.number,
     imageURL: PropTypes.string,
     types: PropTypes.array,
