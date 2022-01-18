@@ -29,7 +29,6 @@ const SortPopup = () => {
 
     useEffect(() => {
         document.body.addEventListener('click', handleOutClick);
-        console.log(activeName);
     }, []);
 
     return (

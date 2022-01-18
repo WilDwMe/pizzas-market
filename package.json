@@ -68,7 +68,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "json-server": "json-server ./public/db.json -p 3005"
+    
   },
   "eslintConfig": {
     "extends": [
@@ -143,6 +145,7 @@
     ]
   },
   "devDependencies": {
+    "json-server": "^0.17.0",
     "prettier": "2.5.1"
   }
 }

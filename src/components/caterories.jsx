@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Categories = ({onClickItem}) => {
+const Categories = React.memo(({onClickItem}) => {
 
   const items = [
     'Мясные',
@@ -12,10 +12,12 @@ const Categories = ({onClickItem}) => {
 
     const [active, setActive] = useState(null);
 
-    const onSelectItem = (index, item) => {
-        setActive(index);
+    const onSelectItem = (index) => {
+        setActive(index);;
         onClickItem(index);
     }
+
+    console.log('RENDER CAT')
 
     return(
         <div className="categories">
@@ -32,6 +34,6 @@ const Categories = ({onClickItem}) => {
         </ul>
       </div>
     )
-}
+})
 
 export default Categories;
