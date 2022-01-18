@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
