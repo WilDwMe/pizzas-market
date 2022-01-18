@@ -1,4 +1,5 @@
 export { default as Header} from '../components/header';
 export { default as  Categories} from '../components/caterories';
 export {default as SortPopup} from '../components/sortPopup';
-export {default as ItemBlock} from '../components/itemBlock';
+export {default as ItemBlock} from '../components/ItemsBlock';
+export {default as Loader} from '../components/ItemsBlock';
