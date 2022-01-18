@@ -1,6 +1,12 @@
 import React, {useState, useEffect, useRef} from "react";
 
-const SortPopup = ({ items }) => {
+const SortPopup = () => {
+  const items = [
+    { name: 'популярности', type: 'popular'},
+    {name: 'цене', type: 'price'},
+    {name: 'алфавиту', type: 'alphabet'}
+  ];
+
     const [show, swithPopup] = useState(false);
     const [active, setActive] = useState(0);
     const sortRef = useRef();

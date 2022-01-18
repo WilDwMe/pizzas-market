@@ -1,12 +1,20 @@
 import React, {useState} from 'react';
 
-const Categories = ({items, onClickItem}) => {
+const Categories = ({onClickItem}) => {
+
+  const items = [
+    'Мясные',
+    'Вегетарианская',
+    'Гриль',
+    'Острые',
+    'Закрытые'
+  ]
 
     const [active, setActive] = useState(null);
 
     const onSelectItem = (index, item) => {
         setActive(index);
-        onClickItem(item);
+        onClickItem(index);
     }
 
     return(
@@ -14,6 +22,7 @@ const Categories = ({items, onClickItem}) => {
         <ul>
           <li className={active === null ? 'active' : ''}
           onClick={() => setActive(null)}>Все</li>
+
           { items && items.map((item, index) => 
           <li 
           className={active === index ? 'active' : ''} 

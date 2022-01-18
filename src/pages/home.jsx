@@ -1,31 +1,19 @@
-import React, {useEffect} from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Categories, SortPopup, ItemBlock } from '../components';
 
-const Home = ({items}) => {
-    const state = {
-        categories: [
-          'Мясные',
-          'Вегетарианская',
-          'Гриль',
-          'Острые',
-          'Закрытые'
-        ],
-        sortItem: [
-          { name: 'популярности', type: 'popular'},
-          {name: 'цене', type: 'price'},
-          {name: 'алфавиту', type: 'alphabet'}
-        ]
-      }
-
+const Home = () => {
+  const items = useSelector(({pizzas}) => pizzas.items);
+  
     return (
         <div className="container">
           <div className="content__top">
-          <Categories items={state.categories} onClickItem={(item) => console.log(item)}/>
-          <SortPopup items={state.sortItem}/>
+          <Categories onClickItem={(item) => console.log(item)}/>
+          <SortPopup />
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
-          {items.map((item) => <ItemBlock 
+          {items && items.map((item) => <ItemBlock 
           key={item.id} {...item}
           />)}  
           </div>
