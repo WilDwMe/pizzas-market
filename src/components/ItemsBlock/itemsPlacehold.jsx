@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader';
 
-const Loader = () => {
+export const Loader = () => {
 return(
   <ContentLoader 
       speed={1}
@@ -15,5 +15,3 @@ return(
     </ContentLoader>
   )
 };
-
-export default Loader;

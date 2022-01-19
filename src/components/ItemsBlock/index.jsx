@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import Loader from '../ItemsBlock';
+
 
 
 const ItemBlock = ({name, price, imageURL, types, sizes, isLoaded}) => {
@@ -17,10 +17,6 @@ const ItemBlock = ({name, price, imageURL, types, sizes, isLoaded}) => {
 
     const onSelectSize = (index) => {
         setActiveSize(index);
-    }
-
-    if(!isLoaded){
-      return <Loader/>
     }
 
     return (
