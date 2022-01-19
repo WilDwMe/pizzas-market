@@ -3,8 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Categories, SortPopup} from '../components';
 import  ItemBlock  from '../components/ItemsBlock';
 import { Loader } from '../components/ItemsBlock/itemsPlacehold';
-import { setCategory } from '../redux/actions/filters';
+import { setCategory, setSortBy } from '../redux/actions/filters';
 import { fetchPizzas } from '../redux/actions/pizzas';
+
+const categories = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
+
+const sortIems = [
+  { name: 'популярности', type: 'popular', order: 'desc' },
+  { name: 'цене', type: 'price', order: 'desc' },
+  { name: 'алфавит', type: 'name', order: 'asc' },
+];
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -14,25 +22,37 @@ const Home = () => {
 
   React.useEffect(() => {
     dispatch(fetchPizzas())
-  }, [category]);
+  }, [category, sortBy]);
 
-  const categories = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
-
-  const onSelectCategory = (index) => {
+  const onSelectCategory = React.useCallback((index) => {
     dispatch(setCategory(index));
-  };
+  },[]);
+
+  const onSelectSortType = React.useCallback((type) => {
+    dispatch(setSortBy(type));
+  },[]);
 
     return (
         <div className="container">
           <div className="content__top">
-          <Categories activeCategory={category} items={categories} onClickCategory={onSelectCategory}/>
-          <SortPopup />
+          <Categories 
+          activeCategory={category} 
+          items={categories} 
+          onClickCategory={onSelectCategory}/>
+          <SortPopup 
+          items={sortIems} 
+          activeSortType={sortBy.type} 
+          onClickSortType={onSelectSortType}/>
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
-          {isLoaded ? items.map((item) => <ItemBlock 
-          key={item.id} isLoaded={isLoaded} {...item}
-          />) :  Array(10).fill(0).map((_, index) => (<Loader key={index}/>))}
+          {isLoaded 
+          ? items.map((item) => 
+          <ItemBlock 
+          key={item.id} 
+          isLoaded={isLoaded} 
+          {...item}/>) 
+          :  Array(10).fill(0).map((_, index) => (<Loader key={index}/>))}
           </div>
         </div>
     )
