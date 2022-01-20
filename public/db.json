@@ -192,22 +192,6 @@
         "price": 409,
         "category": 1,
         "rating": 2
-    },
-    {
-        "id": 12,
-        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/%D0%9C%D0%90%D0%A0%D0%93/NULL/NULL/RU",
-        "name": "Ветчина и грибы",
-        "types": [
-            1
-        ],
-        "sizes": [
-            26,
-            30, 
-            40
-        ],
-        "price": 509,
-        "category": 2,
-        "rating": 2
     }
     ]
 }

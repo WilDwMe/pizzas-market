@@ -1,4 +1,4 @@
-export const addItem = (action) => ({
+export const addItemToCart = (pizza) => ({
     type: 'ADD_PIZZA_CART',
-    payload: action.payload
+    payload: pizza
 });

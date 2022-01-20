@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
+import Button from '../button';
 
 
 
-const ItemBlock = ({name, price, imageURL, types, sizes, isLoaded}) => {
+const ItemBlock = ({id, name, price, imageURL, types, sizes, onAddItem}) => {
     const avaibleTypes = ['тонкое', 'традицинное'];
     const avaibleSize = [26, 30, 40];
 
@@ -18,6 +19,18 @@ const ItemBlock = ({name, price, imageURL, types, sizes, isLoaded}) => {
     const onSelectSize = (index) => {
         setActiveSize(index);
     }
+
+    const handleAddItem = () => {
+      const obj = {
+        id,
+        name,
+        imageURL,
+        price,
+        size: sizes[activeSize],
+        type: avaibleTypes[activeType]
+      }
+    onAddItem(obj);
+    };
 
     return (
         <div className="pizza-block">
@@ -49,7 +62,9 @@ const ItemBlock = ({name, price, imageURL, types, sizes, isLoaded}) => {
           </div>
           <div className="pizza-block__bottom">
             <div className="pizza-block__price">от {price} ₽</div>
-            <div className="button button--outline button--add">
+            <Button onClick={handleAddItem} 
+            className="button--add" 
+            outline>
               <svg
                 width="12"
                 height="12"
@@ -64,7 +79,7 @@ const ItemBlock = ({name, price, imageURL, types, sizes, isLoaded}) => {
               </svg>
               <span>Добавить</span>
               <i>2</i>
-            </div>
+            </Button>
           </div>
         </div>
     )
@@ -75,7 +90,8 @@ ItemBlock.propTypes = {
     price: PropTypes.number,
     imageURL: PropTypes.string,
     types: PropTypes.array,
-    sizes: PropTypes.array
+    sizes: PropTypes.array,
+    handleAddItem: PropTypes.func
 }
 
 ItemBlock.defaultProps = {

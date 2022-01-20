@@ -8,13 +8,13 @@ const cart = (state = initState, action) => {
     switch(action.type) {
         case 'ADD_PIZZA_CART': 
             return { 
-                ...state, 
-                totalPice: state.totalPice + action.payload.price
-            };
-        case 'SET_TOTAL_COUNT': 
-            return { 
-                ...state, 
-                totalCount: action.payload
+               ...state,
+               items: {
+                   [action.payload.id]: [
+                       ...state.items[action.payload.id],
+                       action.payload
+                   ]
+                }
             };
         
         default:

@@ -5,6 +5,7 @@ import  ItemBlock  from '../components/ItemsBlock';
 import { Loader } from '../components/ItemsBlock/itemsPlacehold';
 import { setCategory, setSortBy } from '../redux/actions/filters';
 import { fetchPizzas } from '../redux/actions/pizzas';
+import { addItemToCart } from '../redux/actions/cart';
 
 const categories = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
 
@@ -32,6 +33,11 @@ const Home = () => {
     dispatch(setSortBy(type));
   },[]);
 
+  const onAddItem = React.useCallback((item) => {
+    console.log(item);
+    // dispatch(addItemToCart(item));
+  },[])
+
     return (
         <div className="container">
           <div className="content__top">
@@ -41,16 +47,17 @@ const Home = () => {
           onClickCategory={onSelectCategory}/>
           <SortPopup 
           items={sortIems} 
-          activeSortType={sortBy.type} 
+          activeSortType={sortBy.type}
           onClickSortType={onSelectSortType}/>
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
           {isLoaded 
           ? items.map((item) => 
-          <ItemBlock 
+          <ItemBlock
+          onAddItem={(item) => onAddItem(item)} 
           key={item.id} 
-          isLoaded={isLoaded} 
+          isLoaded={isLoaded}
           {...item}/>) 
           :  Array(10).fill(0).map((_, index) => (<Loader key={index}/>))}
           </div>
