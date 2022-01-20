@@ -33,9 +33,8 @@ const Home = () => {
     dispatch(setSortBy(type));
   },[]);
 
-  const onAddItem = React.useCallback((item) => {
-    console.log(item);
-    // dispatch(addItemToCart(item));
+  const onAddItemCart = React.useCallback((item) => {
+    dispatch(addItemToCart(item));
   },[])
 
     return (
@@ -55,7 +54,7 @@ const Home = () => {
           {isLoaded 
           ? items.map((item) => 
           <ItemBlock
-          onAddItem={(item) => onAddItem(item)} 
+          onAddItem={(item) => onAddItemCart(item)} 
           key={item.id} 
           isLoaded={isLoaded}
           {...item}/>) 
