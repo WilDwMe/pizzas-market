@@ -14,7 +14,7 @@
             40
         ],
         "price": 803,
-        "category": 0,
+        "category": 2,
         "rating": 4
     },
     {
@@ -30,8 +30,8 @@
             30, 
             40
         ],
-        "price": 803,
-        "category": 0,
+        "price": 703,
+        "category": 1,
         "rating": 4
     },
     {
@@ -46,8 +46,8 @@
             26,
             30
         ],
-        "price": 803,
-        "category": 0,
+        "price": 603,
+        "category": 1,
         "rating": 4
     },
     {
@@ -62,8 +62,8 @@
             30, 
             40
         ],
-        "price": 803,
-        "category": 0,
+        "price": 503,
+        "category": 1,
         "rating": 4
     },
     {
@@ -77,7 +77,7 @@
             26,
             30
         ],
-        "price": 803,
+        "price": 403,
         "category": 0,
         "rating": 4
     },
@@ -93,8 +93,8 @@
             30, 
             40
         ],
-        "price": 803,
-        "category": 0,
+        "price": 103,
+        "category": 3,
         "rating": 4
     }
     ]

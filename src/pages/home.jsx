@@ -9,9 +9,9 @@ import { fetchPizzas } from '../redux/actions/pizzas';
 const categories = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
 
 const sortIems = [
-  { name: 'популярности', type: 'popular', order: 'desc' },
-  { name: 'цене', type: 'price', order: 'desc' },
-  { name: 'алфавит', type: 'name', order: 'asc' },
+  { name: 'популярности', type: 'popular', order: 'desc'},
+  { name: 'цене', type: 'price', order: 'asc'},
+  { name: 'алфавит', type: 'name', order: 'asc'},
 ];
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
   const { sortBy, category } = useSelector(({filter}) => filter);
 
   React.useEffect(() => {
-    dispatch(fetchPizzas())
+    dispatch(fetchPizzas(sortBy, category))
   }, [category, sortBy]);
 
   const onSelectCategory = React.useCallback((index) => {

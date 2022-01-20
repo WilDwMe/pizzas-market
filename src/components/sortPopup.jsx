@@ -19,8 +19,10 @@ const SortPopup = ({items, activeSortType, onClickSortType}) => {
     }
 
     const onSelectItem = (item) => {
-        swithPopup(false);
+      if(onClickSortType){
         onClickSortType(item);
+      }
+      swithPopup(false);
     }
 
     useEffect(() => {
