@@ -3,7 +3,7 @@
         {
         "id": 0,
         "imageURL": "https://dominospizza.ru/_next/image?url=%2Fimages%2Fpizza-halves-desktop.jpg&w=256&q=75",
-        "name": "Пеперони с перцем",
+        "name": "Пицца-половинки",
         "types": [
             0,
             1
@@ -13,14 +13,14 @@
             30, 
             40
         ],
-        "price": 803,
+        "price": 509,
         "category": 2,
         "rating": 4
     },
     {
         "id": 1,
-        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/%D0%9F%D0%95%D0%9F%D0%95/NULL/NULL/RU",
-        "name": "Пеперони без перца",
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/OGRASK/NULL/NULL/RU",
+        "name": "огуречный расколбас",
         "types": [
             0,
             1
@@ -36,8 +36,8 @@
     },
     {
         "id": 2,
-        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/_%D0%94%D0%9E%D0%9C%D0%98%D0%9D%D0%9E%D0%A1/NULL/NULL/RU",
-        "name": "Перец с перерони",
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/4SEASON/NULL/NULL/RU",
+        "name": "4 сезона",
         "types": [
             0,
             1
@@ -52,8 +52,8 @@
     },
     {
         "id": 3,
-        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/_DPEP/NULL/NULL/RU",
-        "name": "Только перец",
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/CHHM/NULL/NULL/RU",
+        "name": "Сырная с ветчиной",
         "types": [
             0
         ],
@@ -62,14 +62,14 @@
             30, 
             40
         ],
-        "price": 503,
+        "price": 259,
         "category": 1,
         "rating": 4
     },
     {
         "id": 4,
-        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/%D0%94%D0%98%D0%90/NULL/NULL/RU",
-        "name": "Диабло",
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/PEPDER/NULL/NULL/RU",
+        "name": "Пепперони по-деревенски",
         "types": [
             0
         ],
@@ -77,14 +77,14 @@
             26,
             30
         ],
-        "price": 403,
+        "price": 259,
         "category": 0,
         "rating": 4
     },
     {
         "id": 5,
-        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/%D0%9C%D0%AF%D0%A1/NULL/NULL/RU",
-        "name": "Мясная",
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/_%D0%94%D0%9E%D0%9C%D0%98%D0%9D%D0%9E%D0%A1/NULL/NULL/RU",
+        "name": "Реакто'c",
         "types": [
             1
         ],
@@ -93,9 +93,121 @@
             30, 
             40
         ],
-        "price": 103,
+        "price": 699,
+        "category": 4,
+        "rating": 4
+    },
+    {
+        "id": 6,
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/_%D0%9C%D0%90%D0%A0%D0%93%D0%93%D0%A0%D0%9C/NULL/NULL/RU",
+        "name": "Маргарита Гурме",
+        "types": [
+            1
+        ],
+        "sizes": [
+            26,
+            30, 
+            40
+        ],
+        "price": 344,
         "category": 3,
         "rating": 4
+    },
+    {
+        "id": 7,
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/_DOMSV/NULL/NULL/RU",
+        "name": "Домашняя",
+        "types": [
+            1
+        ],
+        "sizes": [
+            26,
+            30, 
+            40
+        ],
+        "price": 314,
+        "category": 4,
+        "rating": 7
+    },
+    {
+        "id": 8,
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/4CHEESE/NULL/NULL/RU",
+        "name": "4 Сыра",
+        "types": [
+            1
+        ],
+        "sizes": [
+            26,
+            30, 
+            40
+        ],
+        "price": 132,
+        "category": 4,
+        "rating": 2
+    },
+    {
+        "id": 9,
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/%D0%92%D0%95%D0%94%D0%96/NULL/NULL/RU",
+        "name": "Веджи Fit & Fresh",
+        "types": [
+            1
+        ],
+        "sizes": [
+            26,
+            30, 
+            40
+        ],
+        "price": 132,
+        "category": 1,
+        "rating": 2
+    },
+    {
+        "id": 10,
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/%D0%A7BBQ/NULL/NULL/RU",
+        "name": "Чикен BBQ",
+        "types": [
+            1
+        ],
+        "sizes": [
+            26,
+            30, 
+            40
+        ],
+        "price": 409,
+        "category": 1,
+        "rating": 2
+    },
+    {
+        "id": 11,
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/%D0%9C%D0%90%D0%A0%D0%93/NULL/NULL/RU",
+        "name": "Маргарита",
+        "types": [
+            1
+        ],
+        "sizes": [
+            26,
+            30, 
+            40
+        ],
+        "price": 409,
+        "category": 1,
+        "rating": 2
+    },
+    {
+        "id": 12,
+        "imageURL": "https://staticy.dominospizza.ru/api/medium/ProductOsg/Web/%D0%9C%D0%90%D0%A0%D0%93/NULL/NULL/RU",
+        "name": "Ветчина и грибы",
+        "types": [
+            1
+        ],
+        "sizes": [
+            26,
+            30, 
+            40
+        ],
+        "price": 509,
+        "category": 2,
+        "rating": 2
     }
     ]
 }

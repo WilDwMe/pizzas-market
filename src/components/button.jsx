@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-const Button = ({onClick, className, outline, children}) => {
+const Button = ({onClick, className, outline, children, totalPrice, totalCount}) => {
 
     const clasess = cn('button', className, {
         'button--outline' : outline
@@ -9,7 +9,7 @@ const Button = ({onClick, className, outline, children}) => {
 
     return(
         <span className={clasess}>
-              <span>{ children } ₽</span>
+              <span>{totalPrice} ₽</span>
               <div className='button__delimiter'></div>
               <svg
                 width="18"
@@ -40,7 +40,7 @@ const Button = ({onClick, className, outline, children}) => {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span>3</span>
+              <span>{totalCount}</span>
         </span>
     );
 }
