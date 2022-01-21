@@ -10,7 +10,7 @@ export const setLoaded = (payload) => ({
 export const fetchPizzas = (sortBy, category) => dispatch => {
     console.log(sortBy);
     dispatch(setLoaded(false));
-    axios.get(`http://localhost:3001/pizzas?${category !== null ? `category=${category}` : ''}&_sort=${sortBy.type}&_order=${sortBy.order}`).then(({ data }) => {
+    axios.get(`http://localhost:3002/pizzas?${category !== null ? `category=${category}` : ''}&_sort=${sortBy.type}&_order=${sortBy.order}`).then(({ data }) => {
         dispatch(setPizzas(data));
     });
 };
