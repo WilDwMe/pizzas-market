@@ -5,7 +5,7 @@ import Button from '../button';
 
 
 
-const ItemBlock = ({id, name, price, imageURL, types, sizes, onAddItem}) => {
+const ItemBlock = ({id, name, price, imageURL, types, sizes, onAddItem,  addedCount}) => {
     const avaibleTypes = ['тонкое', 'традицинное'];
     const avaibleSize = [26, 30, 40];
 
@@ -62,9 +62,7 @@ const ItemBlock = ({id, name, price, imageURL, types, sizes, onAddItem}) => {
           </div>
           <div className="pizza-block__bottom">
             <div className="pizza-block__price">от {price} ₽</div>
-            <Button onClick={handleAddItem} 
-            className="button--add" 
-            outline>
+            <Button onClick={handleAddItem} className="button--add" outline>
               <svg
                 width="12"
                 height="12"
@@ -78,7 +76,7 @@ const ItemBlock = ({id, name, price, imageURL, types, sizes, onAddItem}) => {
                 />
               </svg>
               <span>Добавить</span>
-              <i>2</i>
+              {addedCount && <i>{addedCount}</i>}
             </Button>
           </div>
         </div>
