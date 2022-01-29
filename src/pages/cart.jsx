@@ -92,7 +92,7 @@ const Cart = () => {
                   </svg>
                   <span>Вернуться назад</span>
                 </a>
-                <div className="button pay-btn">
+                <div onClick={onClickOrder} className="button pay-btn">
                   <span>Оплатить сейчас</span>
                 </div>
               </div>
