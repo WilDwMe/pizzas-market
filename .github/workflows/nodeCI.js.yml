@@ -1,5 +1,5 @@
 # Name of workflow
-name: Node CI/CD
+name: Node CI
 
 # Trigger the workflow on push or pull request
 on:
@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     # The type of machine to run the job on
     runs-on: ubuntu-latest
 
@@ -18,8 +17,8 @@ jobs:
         node-version: [14.x]
 
     steps:
-        # Check-out repository under GitHub workspace
-        # https://github.com/actions/checkout
+      # Check-out repository under GitHub workspace
+      # https://github.com/actions/checkout
       - uses: actions/checkout@v2
         # Step's name
         # Reconfigure git to use HTTP authentication
@@ -54,4 +53,4 @@ jobs:
       #     CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
       #   with:
       #     # coverageCommand: make test-coverage
-      #     debug: true 
+      #     debug: true

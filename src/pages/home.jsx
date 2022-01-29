@@ -23,19 +23,19 @@ const Home = () => {
 
   React.useEffect(() => {
     dispatch(fetchPizzas(sortBy, category))
-  }, [category, sortBy]);
+  }, [category, sortBy, dispatch]);
 
   const onSelectCategory = React.useCallback((index) => {
     dispatch(setCategory(index));
-  },[]);
+  },[dispatch]);
 
   const onSelectSortType = React.useCallback((type) => {
     dispatch(setSortBy(type));
-  },[]);
+  },[dispatch]);
 
   const onAddItemCart = React.useCallback((item) => {
     dispatch(addItemToCart(item));
-  },[])
+  },[dispatch])
 
     return (
         <div className="container">
