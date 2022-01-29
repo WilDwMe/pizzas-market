@@ -1,10 +1,11 @@
 import React from 'react'
-import { CartItem } from '../components';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import {Link} from 'react-router-dom';
 
-import { clearCart } from '../redux/actions/cart';
-
+import { clearCart, removeCartItem, plusCartItem, minusCartItem } from '../redux/actions/cart';
+import { CartItem } from '../components';
+import cartEmptyImage from '../assets/img/empty-cart.png'
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -15,14 +16,35 @@ const Cart = () => {
   });
 
   const onClearCart = () => {
-    dispatch(clearCart());
+    if(window.confirm('Вы действительно хотите отчистить корзину?')){
+      dispatch(clearCart());
+    }
   }
 
+  const onRemoveItem = (id) => {
+    if(window.confirm('Вы действительно хотите удалить пиццу?')){
+      dispatch(removeCartItem(id));
+    }
+  }
+
+  const onPlusItem = (id) => {
+    dispatch(plusCartItem(id));
+  };
+
+  const onMinusItem = (id) => {
+    dispatch(minusCartItem(id));
+  };
+
+  const onClickOrder = () => {
+    console.log('ВАШ ЗАКАЗ', items);
+  };
 
     return (
       <div className="content">
         <div className="container container--cart">
-          <div className="cart">
+          {
+            totalCount ? 
+            <div className="cart">
             <div className="cart__top">
               <h2 className="content__title"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6.33333 16.3333C7.06971 16.3333 7.66667 15.7364 7.66667 15C7.66667 14.2636 7.06971 13.6667 6.33333 13.6667C5.59695 13.6667 5 14.2636 5 15C5 15.7364 5.59695 16.3333 6.33333 16.3333Z" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
@@ -43,13 +65,17 @@ const Cart = () => {
             <div className="content__items">
             {
               addedItemsGroup.map((obj) => (
-              <CartItem 
+              <CartItem
+              id={obj.id} 
               key={obj.id} 
               name={obj.name} 
               size={obj.size} 
               type={obj.type} 
               totalPrice={items[obj.id].totalPrice}
               totalCount={items[obj.id].items.length}
+              onRemove={onRemoveItem}
+              onMinus={onMinusItem}
+              onPlus={onPlusItem}
               />
               ))
             }
@@ -62,9 +88,8 @@ const Cart = () => {
               <div className="cart__bottom-buttons">
                 <a href="/" className="button button--outline button--add go-back-btn">
                   <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7 13L1 6.93015L6.86175 1" stroke="#D3D3D3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-</svg>
-
+                  <path d="M7 13L1 6.93015L6.86175 1" stroke="#D3D3D3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                   <span>Вернуться назад</span>
                 </a>
                 <div className="button pay-btn">
@@ -72,7 +97,20 @@ const Cart = () => {
                 </div>
               </div>
             </div>
+          </div> 
+          : 
+          <div className="cart cart--empty">
+            <h2>Корзина пустая <icon>😕</icon></h2>
+            <p>
+              Вероятней всего, вы не заказывали ещё пиццу.<br />
+              Для того, чтобы заказать пиццу, перейди на главную страницу.
+            </p>
+            <img src={ cartEmptyImage } alt="Empty cart" />
+            <Link to="/" className="button button--black">
+              <span>Вернуться назад</span>
+            </Link>
           </div>
+          }
         </div>
       </div>
     )
